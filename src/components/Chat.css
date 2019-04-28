@@ -1,0 +1,38 @@
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 100px;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 20px;
+}
+
+.message.left {
+  align-self: flex-end;
+  background-color: green;
+}
+
+.message.right {
+  align-self: flex-start;
+  background-color: yellow;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 200px;
+}

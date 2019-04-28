@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import Menu from './components/Menu';
+import Channel from './components/Channel';
+import Chat from './components/Chat';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { users, messages, channels } from './data';
+
+class App extends React.PureComponent {
+  state = {
+    // User spread operator to avoid mutating the original data directly
+    users: [...users],
+    messages: [...messages],
+    channels: [...channels],
+  };
+
+  render() {
+    const { users, messages, channels } = this.state;
+    console.log(users, messages, channels);
+    return (
+      <div className="app">
+        <Menu />
+        <Channel />
+        <Chat />
+      </div>
+    );
+  }
 }
 
 export default App;
